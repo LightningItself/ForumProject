@@ -4,14 +4,17 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { RecoilRoot } from "recoil";
 import lightTheme from "../chakra/lightTheme";
 import Layout from "../components/Layout/Layout";
+import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <ChakraProvider theme={lightTheme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <SessionProvider session={pageProps.session}>
+          <Layout>
+            <Component {...pageProps} />{" "}
+          </Layout>
+        </SessionProvider>
       </ChakraProvider>
     </RecoilRoot>
   );

@@ -9,14 +9,15 @@ const AuthButton = () => {
     <Flex mr="6px" display={{ base: "none", md: "unset" }}>
       <Button
         mr="6px"
-        colorScheme="blue"
+        variant="outline"
+        colorScheme="brand"
         onClick={() => setAuthModalState({ open: true, view: "signup" })}
       >
         Sign Up
       </Button>
       <Button
-        colorScheme="blue"
-        variant="outline"
+        variant="solid"
+        colorScheme="brand"
         onClick={() => setAuthModalState({ open: true, view: "login" })}
       >
         Log In
